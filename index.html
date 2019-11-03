@@ -1,4 +1,5 @@
 <title>Minecraft Indev</title>
+<script src="javascript/howler.min.js" type="text/javascript>
 <body background="tiles/background.jpg">
 <center>
 <img src="tiles/logo.png">
@@ -28,10 +29,13 @@
 }   
 </style>
 <script>
-myAudio = new Audio('audio/calm3.ogg'); 
-myAudio.addEventListener('ended', function() {
-    this.currentTime = 0;
-    this.play();
-}, false);
-myAudio.play();
+var sound = new Howl({
+  src: ['calm3.ogg'],
+  autoplay: true,
+  loop: true,
+  volume: 0.5,
+  onend: function() {
+    console.log('Finished!');
+  }
+});
 </script>
